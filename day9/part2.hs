@@ -12,17 +12,20 @@ main = do
   contents <- hGetContents handle
   let lines = splitOn "\n" $ init contents
       nums = map (\x -> read x :: Int) lines
-      x = sort $ func nums 22406676 []
+      x = sort $ getSequence nums 22406676 []
       answer = head x + last x
   print answer
 
--- use stack to store value
-func :: [Int] -> Int -> [Int] -> [Int]
-func [] _ stack = stack
-func (x : xs) num stack
-  | currentSum < num = func xs num (stack ++ [x])
+-- | Get a sequence of numbers which sum up to the input number
+-- @param [Int] xs
+-- @param Int num: input number
+-- @param [Int] stack
+-- @return [Int]: list of number sum up to num
+getSequence :: [Int] -> Int -> [Int] -> [Int]
+getSequence (x : xs) num stack
+  | currentSum < num = getSequence xs num (stack ++ [x])
   | currentSum == num = stack
-  | currentSum > num = func xs num (pop (stack ++ [x]) num)
+  | currentSum > num = getSequence xs num (pop (stack ++ [x]) num)
   where
     currentSum = sum stack
 
