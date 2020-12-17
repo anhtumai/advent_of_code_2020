@@ -6,7 +6,7 @@ import System.IO
 
 main = do
   let list = []
-  handle <- openFile "day1_input.txt" ReadMode
+  handle <- openFile "input.txt" ReadMode
   contents <- hGetContents handle
   let singlewords = words contents
       list = f singlewords

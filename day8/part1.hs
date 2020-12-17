@@ -5,6 +5,7 @@ import Data.List
 import Data.List.Split
 import System.IO
 
+-- Problem: Part 1 in https://adventofcode.com/2020/day/8
 main = do
   let list = []
   handle <- openFile "input.txt" ReadMode
@@ -15,9 +16,15 @@ main = do
   let answer = compute pairs 0 [] 0
   print answer
 
+-- Compute final value until an instruction is repeated
+-- @param [(String, String)] pairs: list of instructions (exp: [("nop","+1"),("acc","-1"),...])
+-- @param Int current: current index of instruction list
+-- @param [Int] executedStates: list of executed instructions
+-- @param Int result: current result
+-- @return Int: final value
 compute :: [(String, String)] -> Int -> [Int] -> Int -> Int
 compute pairs current executedStates result
-  | elem current executedStates = result
+  | current `elem` executedStates = result
   | key == "nop" = compute pairs (current + 1) (current : executedStates) result
   | key == "acc" = compute pairs (current + 1) (current : executedStates) (calculate value result)
   | key == "jmp" = compute pairs (calculate value current) (current : executedStates) result
@@ -32,7 +39,6 @@ calculate eval first
     operator = head eval
     second = read (drop 1 eval) :: Int
 
--- "nop +0" -> ("nop","+0", False)
 parse :: String -> (String, String)
 parse s = (head fields, last fields)
   where

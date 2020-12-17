@@ -7,17 +7,19 @@ import System.IO
 
 preamble = 25
 
+-- Problem: Part 1 in https://adventofcode.com/2020/day/9
 main = do
   let list = []
   handle <- openFile "input.txt" ReadMode
   contents <- hGetContents handle
   let lines = splitOn "\n" $ init contents
       nums = reverse $ map (\x -> read x :: Int) lines
-      answer = func nums
+      answer = find nums
   print answer
 
-func :: [Int] -> Int
-func (x : xs)
+-- Find first number which is not sum of 2 elements inside preamble length
+find :: [Int] -> Int
+find (x : xs)
   | checkValid x (sort $ take preamble xs) = func xs
   | otherwise = x
 
