@@ -5,6 +5,7 @@ import Data.List
 import Data.List.Split
 import System.IO
 
+-- Problem: Part 1 in https://adventofcode.com/2020/day/11
 main = do
   let list = []
   handle <- openFile "input.txt" ReadMode

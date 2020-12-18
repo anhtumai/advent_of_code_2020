@@ -6,6 +6,7 @@ import Data.List.Split
 import Data.Maybe
 import System.IO
 
+-- Problem: Part 2 in https://adventofcode.com/2020/day/11
 main = do
   let list = []
   handle <- openFile "input.txt" ReadMode
@@ -55,7 +56,7 @@ getVisibleSeats (x, y) seats = foldl (\acc x -> if isJust x then fromJust x : ac
   where
     directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
--- | Get the first seat a person can see in 1 direction
+-- | Get status of the first seat a person can see in 1 direction (exp: Just 'L' or Just '#' or Nothing)
 getNearestSeat :: [[Char]] -> (Int, Int) -> (Int, Int) -> Maybe Char
 getNearestSeat seats (x, y) (directionX, directionY)
   | newX >= maxX || newY >= maxY || newX < 0 || newY < 0 = Nothing
