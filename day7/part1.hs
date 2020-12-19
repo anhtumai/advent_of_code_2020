@@ -16,6 +16,7 @@ main = do
   let pairs = map parseRule lines
       answer = Set.size $ search "shinygold" pairs
   print answer
+  hClose handle
 
 -- | A function searches for bags containing input bag and returns set of bags
 -- "inputBagName" [("X1",["X2","X3"]), ("X2":["inputBagName"])] -> Set ["X1","X2"]

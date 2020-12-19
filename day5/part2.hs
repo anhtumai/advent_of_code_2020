@@ -14,6 +14,7 @@ main = do
       sortedIds = sort ids
   let answer = findMissingSeat sortedIds
   print answer
+  hClose handle
 
 separate :: String -> Char -> Char -> String
 separate [] _ _ = ""

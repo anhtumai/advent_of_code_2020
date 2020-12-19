@@ -14,6 +14,7 @@ main = do
   let requiredFields = [("byr", checkBYR), ("iyr", checkIYR), ("eyr", checkEYR), ("hgt", checkHGT), ("hcl", checkHCL), ("ecl", checkECL), ("pid", checkPID)]
   let answer = foldl (\count x -> if isValid x requiredFields then count + 1 else count) 0 list
   print answer
+  hClose handle
 
 isValid :: String -> [(String, String -> Bool)] -> Bool
 isValid s rfs = checkFieldsExistAndValid rfs (parsePassport s)

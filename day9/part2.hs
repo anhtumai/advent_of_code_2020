@@ -15,6 +15,7 @@ main = do
       x = sort $ getSequence nums 22406676 []
       answer = head x + last x
   print answer
+  hClose handle
 
 -- | Get a sequence of numbers which sum up to the input number
 -- @param [Int] xs

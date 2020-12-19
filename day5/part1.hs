@@ -18,6 +18,7 @@ main = do
   let answer = foldl f 0 list
 
   print answer
+  hClose handle
 
 separate :: String -> Char -> Char -> String
 separate [] _ _ = ""

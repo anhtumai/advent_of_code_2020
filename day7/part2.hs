@@ -17,6 +17,7 @@ main = do
   let pairs = map parseRule lines
       answer = calculate "shinygold" pairs
   print answer
+  hClose handle
 
 -- | The fucntion calculates how many bags the input bag can contain
 -- "inputBag" [("inputBag",[(1,"X1"),(2,"X2)"]), ("X1",[(3,"X3"),(4,"X4)"])] -> 1 + 1*(3+4) + 2 + 2*0 = 10

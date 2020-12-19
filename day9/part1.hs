@@ -16,6 +16,7 @@ main = do
       nums = reverse $ map (\x -> read x :: Int) lines
       answer = find nums
   print answer
+  hClose handle
 
 -- Find first number which is not sum of 2 elements inside preamble length
 find :: [Int] -> Int

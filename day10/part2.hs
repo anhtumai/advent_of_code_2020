@@ -16,6 +16,7 @@ main = do
       adapters = 0 : nums ++ [last nums + 3]
       answer = last $ getOptions adapters [1]
   print answer
+  hClose handle
 
 -- Solution:
 -- Find number of options to reach each target.

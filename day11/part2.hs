@@ -15,6 +15,7 @@ main = do
       answer = getNumberOfSeats seats
 
   print answer
+  hClose handle
 
 -- | get number of seats when the chaos stabilizes
 getNumberOfSeats :: [[Char]] -> Int

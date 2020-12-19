@@ -15,6 +15,7 @@ main = do
       (one, two, three) = getGaps nums
       answer = one * three
   print answer
+  hClose handle
 
 getGaps :: [Int] -> (Int, Int, Int)
 getGaps [_] = (0, 0, 1)

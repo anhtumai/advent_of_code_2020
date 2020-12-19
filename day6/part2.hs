@@ -14,6 +14,7 @@ main = do
   let answer = foldl (\acc x -> acc + count x) 0 list
 
   print answer
+  hClose handle
 
 count :: String -> Int
 count xss = length (intersectList (splitOn "\n" xss))

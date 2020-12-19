@@ -15,6 +15,7 @@ main = do
 
   let answer = compute pairs 0 [] 0
   print answer
+  hClose handle
 
 -- Compute final value until an instruction is repeated
 -- @param [(String, String)] pairs: list of instructions (exp: [("nop","+1"),("acc","-1"),...])

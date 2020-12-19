@@ -16,6 +16,7 @@ main = do
       manyPairs = getListOfEdittedPairs pairs
       answer = bruteForce manyPairs
   print answer
+  hClose handle
 
 -- Replace 1 tuple with key "nop" with key "jmp" and vice versa. Return all permutations.
 getListOfEdittedPairs :: [(String, String)] -> [[(String, String)]]

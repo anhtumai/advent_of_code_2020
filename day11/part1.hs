@@ -12,8 +12,8 @@ main = do
   contents <- hGetContents handle
   let seats = init $ splitOn "\n" contents
       answer = getNumberOfSeats seats
-  print seats
   print answer
+  hClose handle
 
 -- | get number of seats when the chaos stabilizes
 getNumberOfSeats :: [[Char]] -> Int
