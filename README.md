@@ -36,7 +36,7 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 11: Seating System](https://github.com/anhtumai/advent_of_code_2020/tree/master/day11)| ✔ | ✔ |
 | ✔ [Day 12: Rain Risk](https://github.com/anhtumai/advent_of_code_2020/tree/master/day12)| ✔ | ✔ |
 | ✔ [Day 13: Shuttle Search](https://github.com/anhtumai/advent_of_code_2020/tree/master/day13)| ✔ | ✔ |
-| [Day 14: TBD]()| | |
+| ✔ [Day 14: Docking Data](https://github.com/anhtumai/advent_of_code_2020/tree/master/day14)| ✔ | ✔ |
 | [Day 15: TBD]()| | |
 | [Day 16: TBD]()| | |
 | [Day 17: TBD]()| | |

@@ -39,6 +39,7 @@ parse s
     value = last x
 
 -- | Get new value which is overwritten by bitmask
+-- bitmaskOverwrite "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X" 11 -> 73
 bitmaskOverwrite :: [Char] -> Int -> Int
 bitmaskOverwrite mask n = toDecimal $ zipWith (curry f) mask (toBin n)
   where
