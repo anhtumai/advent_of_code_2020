@@ -33,12 +33,12 @@ main = do
 -- give a list of possible positions, determine the exact position
 -- Exp: determineExactPosition [[1,2,3],[2,3],[3]] -> [1,2,3]
 determineExactPosition :: [[Int]] -> [Int]
-determineExactPosition positionss = exactPositions
+determineExactPosition positionss = sortedExactPositionsByIndex
   where
     indexPositionsPair = zip [0 ..] positionss
     (indices, sortedPositionssByLength) = unzip $ sortOn (\(index, xs) -> length xs) indexPositionsPair
-    sortedPositionssByIndex = foldl (\acc xs -> acc ++ (xs \\ acc)) [] sortedPositionssByLength
-    exactPositions = map snd $ sortOn fst $ zip indices sortedPositionssByIndex
+    exactPositions = foldl (\acc xs -> acc ++ (xs \\ acc)) [] sortedPositionssByLength
+    sortedExactPositionsByIndex = map snd $ sortOn fst $ zip indices exactPositions
 
 -- give the list of 0th,1st,..,Nth values of all tickets, get the possible rule position.
 -- Exp: getPossiblePositions [[(0,1),(4,19)],[(0,5),(8,19)],[(0,13),(16-19)]] [[3,15,5],[9,1,4],[18,5,9]] -> [[1],[0],[2]]
