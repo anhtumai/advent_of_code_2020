@@ -37,8 +37,8 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✔ [Day 12: Rain Risk](https://github.com/anhtumai/advent_of_code_2020/tree/master/day12)| ✔ | ✔ |
 | ✔ [Day 13: Shuttle Search](https://github.com/anhtumai/advent_of_code_2020/tree/master/day13)| ✔ | ✔ |
 | ✔ [Day 14: Docking Data](https://github.com/anhtumai/advent_of_code_2020/tree/master/day14)| ✔ | ✔ |
-| [Day 15: TBD]()| | |
-| [Day 16: TBD]()| | |
+| ✔ [Day 15: Rambunctious Recitation](https://github.com/anhtumai/advent_of_code_2020/tree/master/day15)| ✔ | ✔ |
+| ✔ [Day 16: Ticket Translation](https://github.com/anhtumai/advent_of_code_2020/tree/master/day16)| ✔ | ✔ |
 | [Day 17: TBD]()| | |
 | [Day 18: TBD]()| | |
 | [Day 19: TBD]()| | |
@@ -57,4 +57,11 @@ Each day contains 2 parts:
 // Working directory: day...
 $> stack runhaskell part1.hs
 $> stack runhaskell part2.hs
+```
+
+Except for day 15, since it requires a lot of memory, we need to compile the code:
+
+```bash
+$> ghc Main.hs -dynamic -O
+$> ./Main
 ```

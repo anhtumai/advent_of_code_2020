@@ -9,7 +9,6 @@ import System.IO
 
 -- Problem: Part 1 in https://adventofcode.com/2020/day/14
 main = do
-  let list = []
   handle <- openFile "input.txt" ReadMode
   contents <- hGetContents handle
   let info = init $ splitOn "\n" contents
